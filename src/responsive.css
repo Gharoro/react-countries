@@ -1,0 +1,79 @@
+@media (min-width: 280px) and (max-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative;
+  }
+  main {
+    padding: 20px 20px;
+  }
+  header {
+    padding: 0px 10px;
+    margin: 0px;
+    width: 100svw;
+  }
+  header h1 {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  header div i,
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .search-bar {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-input input {
+    width: 100%;
+  }
+  .search-input i {
+    left: 4%;
+  }
+  .select-region {
+    width: 50%;
+    height: 52px;
+    margin-top: 20px;
+  }
+  .select-region-heading h6,
+  i {
+    font-size: 14px;
+  }
+  .select-options {
+    /* top: 24%; */
+    top: 5.7%;
+    width: 35%;
+  }
+  .countries {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  .country-card {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .search-bar input {
+    width: 60%;
+  }
+  .search-input i {
+    left: 4%;
+  }
+  .select-region {
+    width: 40%;
+  }
+  .select-options {
+    top: 15%;
+    width: 20%;
+  }
+  .country-card {
+    width: 48%;
+    margin-bottom: 4%;
+  }
+}
