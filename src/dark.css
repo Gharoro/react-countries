@@ -1,0 +1,38 @@
+.dark-header {
+  background-color: #15202b;
+  color: #fff;
+}
+.dark-main {
+  background-color: #192734;
+}
+.search-input-dark input,
+.select-region-dark,
+.select-region-heading-dark {
+  background-color: #192734;
+  color: #ccc;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+.select-options-dark {
+  background-color: #192734;
+  color: #ccc;
+}
+.country-card-dark {
+  background-color: #15202b;
+  box-shadow: 2px 2px 2px #15202b;
+}
+.country-details-dark {
+  color: #fff;
+}
+.dark-btn {
+  background-color: #192734;
+  color: #ccc;
+  box-shadow: none !important;
+  border: 1px solid #ccc;
+}
+.details-right-dark {
+  color: #fff;
+}
+.dark-list {
+  color: #000;
+}

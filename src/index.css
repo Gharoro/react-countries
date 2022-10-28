@@ -32,6 +32,7 @@ header h1 {
 header div {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 header div i,
 p {
@@ -147,6 +148,7 @@ i {
 }
 .country {
   padding: 60px;
+  height: 100vh;
 }
 .country button {
   padding: 10px;
