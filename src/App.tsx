@@ -7,15 +7,19 @@ import Home from "./pages/Home";
 function App() {
   const themeContext = useContext(ThemeContext);
   const localTheme = localStorage.getItem("apptheme");
+  const bodyElt = document.querySelector("body");
+
   useEffect(() => {
-    if (themeContext.setIsDark) {
+    if (themeContext.setIsDark && bodyElt) {
       if (localTheme === "light") {
         themeContext.setIsDark(false);
+        bodyElt.style.backgroundColor = "#f5f5f5";
       } else {
         themeContext.setIsDark(true);
+        bodyElt.style.backgroundColor = "#192734";
       }
     }
-  }, [localTheme, themeContext]);
+  }, [localTheme, themeContext, bodyElt]);
 
   return (
     <Routes>

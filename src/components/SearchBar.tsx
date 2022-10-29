@@ -1,8 +1,20 @@
 import React, { useState, useContext } from "react";
 import useOutsideClick from "../hooks/useOutsideClick";
 import { ThemeContext } from "../context/ThemeContext";
+import { useAppDispatch } from "../hooks/redux-hooks";
+import { searchCountries } from "../store/actions";
 
-export default function SearchBar() {
+export default function SearchBar({
+  selected,
+  searchText,
+  setSelected,
+  setSearchText,
+}: {
+  selected: string;
+  searchText: string;
+  setSelected: React.Dispatch<React.SetStateAction<string>>;
+  setSearchText: React.Dispatch<React.SetStateAction<string>>;
+}) {
   const regions = [
     { title: "Africa", value: "Africa" },
     { title: "America", value: "America" },
@@ -16,6 +28,12 @@ export default function SearchBar() {
   const wrapperRef2 = React.useRef<HTMLDivElement>(null);
   useOutsideClick(wrapperRef, wrapperRef2, setShowOptions);
   const themeContext = useContext(ThemeContext);
+  const dispatch = useAppDispatch();
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(searchCountries(searchText));
+  };
 
   return (
     <div className="search-bar">
@@ -26,12 +44,15 @@ export default function SearchBar() {
             : "search-input"
         }
       >
-        <input
-          type="text"
-          name="search"
-          placeholder="Search for a country..."
-        />
-        <i className="fa-solid fa-magnifying-glass"></i>
+        <form onSubmit={handleSearch}>
+          <input
+            onChange={(e) => setSearchText(e.target.value)}
+            type="text"
+            name="search"
+            placeholder="Search for a country..."
+          />
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </form>
       </div>
       <div
         className={
@@ -49,9 +70,10 @@ export default function SearchBar() {
           }
           onClick={() => setShowOptions(!showOptions)}
         >
-          <h6>Filter by Region</h6>
+          <h6>{selected}</h6>
           <i className="fa-solid fa-chevron-down"></i>
         </div>
+
         {showOptions && (
           <div
             ref={wrapperRef}
@@ -62,7 +84,15 @@ export default function SearchBar() {
             }
           >
             {regions.map((region) => (
-              <p key={region.title}>{region.value}</p>
+              <p
+                onClick={() => {
+                  setSelected(region.value);
+                  setShowOptions(false);
+                }}
+                key={region.title}
+              >
+                {region.value}
+              </p>
             ))}
           </div>
         )}

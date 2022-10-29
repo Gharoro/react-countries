@@ -1,18 +1,19 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
-import { ICountry } from "../types/redux-types";
+import { IFilterCountry } from "../types/redux-types";
 import formatNumber from "../utils/formatNumber";
 
-export default function Country({ data }: { data: ICountry }) {
+export default function RegionCountry({ data }: { data: IFilterCountry }) {
   const themeContext = useContext(ThemeContext);
+
   return (
     <div
       className={
         themeContext.isDark ? "country-card country-card-dark" : "country-card"
       }
     >
-      <Link to={`/country/${data.name}`}>
+      <Link to={`/country/${data.name.common}`}>
         <img src={data.flags.svg || data.flags.png} alt="country flag" />
         <div
           className={
@@ -21,7 +22,7 @@ export default function Country({ data }: { data: ICountry }) {
               : "country-details"
           }
         >
-          <h2>{data.name}</h2>
+          <h2>{data.name.common}</h2>
           <h6>
             <strong>Population:</strong>
             <span> {formatNumber(data.population)}</span>
@@ -31,7 +32,7 @@ export default function Country({ data }: { data: ICountry }) {
           </h6>
           <h6>
             <strong>Capital:</strong>
-            <span> {data.capital}</span>
+            <span> {data.capital && data.capital[0]}</span>
           </h6>
         </div>
       </Link>

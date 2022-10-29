@@ -7,6 +7,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #f5f5f5;
 }
+
 a {
   color: #000;
   text-decoration: none;
@@ -44,6 +45,7 @@ header div i {
 }
 main {
   padding: 30px 60px;
+  height: 100vh;
 }
 .search-bar {
   display: flex;
@@ -113,21 +115,18 @@ i {
 }
 .countries {
   margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 .country-card {
-  width: 22%;
-  height: fit-content;
   background-color: #fff;
   border-radius: 4px;
-  margin-bottom: 3%;
+  margin-bottom: 60px;
 }
 .country-card img {
   width: 100%;
-  height: 25%;
+  height: 50%;
 }
 .country-details {
   padding: 20px;
@@ -147,7 +146,7 @@ i {
   font-size: 14px;
 }
 .country {
-  padding: 60px;
+  padding: 80px;
   height: 100vh;
 }
 .country button {
@@ -200,7 +199,7 @@ i {
 .details-right .bottom {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 40px;
 }
 ul li {
@@ -208,14 +207,112 @@ ul li {
   background-color: #fff;
   margin-right: 10px;
   padding: 6px;
-  width: 120px;
+  width: 100px;
   text-align: center;
   border: 2px solid #ccc;
   border-radius: 4px;
 }
 ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  align-items: flex-start;
   margin-left: 30px;
+}
+.reset-btn {
+  padding: 4px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+.loader {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lds-default {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-default div {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgb(192, 192, 192);
+  border-radius: 50%;
+  animation: lds-default 1.2s linear infinite;
+}
+.lds-default div:nth-child(1) {
+  animation-delay: 0s;
+  top: 37px;
+  left: 66px;
+}
+.lds-default div:nth-child(2) {
+  animation-delay: -0.1s;
+  top: 22px;
+  left: 62px;
+}
+.lds-default div:nth-child(3) {
+  animation-delay: -0.2s;
+  top: 11px;
+  left: 52px;
+}
+.lds-default div:nth-child(4) {
+  animation-delay: -0.3s;
+  top: 7px;
+  left: 37px;
+}
+.lds-default div:nth-child(5) {
+  animation-delay: -0.4s;
+  top: 11px;
+  left: 22px;
+}
+.lds-default div:nth-child(6) {
+  animation-delay: -0.5s;
+  top: 22px;
+  left: 11px;
+}
+.lds-default div:nth-child(7) {
+  animation-delay: -0.6s;
+  top: 37px;
+  left: 7px;
+}
+.lds-default div:nth-child(8) {
+  animation-delay: -0.7s;
+  top: 52px;
+  left: 11px;
+}
+.lds-default div:nth-child(9) {
+  animation-delay: -0.8s;
+  top: 62px;
+  left: 22px;
+}
+.lds-default div:nth-child(10) {
+  animation-delay: -0.9s;
+  top: 66px;
+  left: 37px;
+}
+.lds-default div:nth-child(11) {
+  animation-delay: -1s;
+  top: 62px;
+  left: 52px;
+}
+.lds-default div:nth-child(12) {
+  animation-delay: -1.1s;
+  top: 52px;
+  left: 62px;
+}
+@keyframes lds-default {
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
 }

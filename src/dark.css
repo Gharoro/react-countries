@@ -4,6 +4,7 @@
 }
 .dark-main {
   background-color: #192734;
+  height: 100vh;
 }
 .search-input-dark input,
 .select-region-dark,
