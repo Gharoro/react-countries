@@ -6,13 +6,14 @@ import formatNumber from "../utils/formatNumber";
 
 export default function Country({ data }: { data: ICountry }) {
   const themeContext = useContext(ThemeContext);
+
   return (
     <div
       className={
         themeContext.isDark ? "country-card country-card-dark" : "country-card"
       }
     >
-      <Link to={`/country/${data.name}`}>
+      <Link to={`/country/${data.alpha3Code}`}>
         <img src={data.flags.svg || data.flags.png} alt="country flag" />
         <div
           className={
@@ -22,17 +23,17 @@ export default function Country({ data }: { data: ICountry }) {
           }
         >
           <h2>{data.name}</h2>
-          <h6>
+          <p>
             <strong>Population:</strong>
             <span> {formatNumber(data.population)}</span>
-          </h6>
-          <h6>
+          </p>
+          <p>
             <strong>Region:</strong> <span>{data.region}</span>
-          </h6>
-          <h6>
+          </p>
+          <p>
             <strong>Capital:</strong>
             <span> {data.capital}</span>
-          </h6>
+          </p>
         </div>
       </Link>
     </div>

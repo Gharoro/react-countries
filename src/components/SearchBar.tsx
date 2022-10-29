@@ -70,7 +70,7 @@ export default function SearchBar({
           }
           onClick={() => setShowOptions(!showOptions)}
         >
-          <h6>{selected}</h6>
+          <h1>{selected}</h1>
           <i className="fa-solid fa-chevron-down"></i>
         </div>
 

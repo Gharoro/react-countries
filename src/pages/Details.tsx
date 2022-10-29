@@ -46,45 +46,45 @@ export default function Details() {
                   : "details-right"
               }
             >
-              <h1>{country?.name}</h1>
+              <h2>{country?.name}</h2>
               <div className="sub-details">
                 <div>
-                  <h6>
+                  <p>
                     <strong>Native Name:</strong>{" "}
                     <span>{country?.nativeName}</span>{" "}
-                  </h6>
-                  <h6>
+                  </p>
+                  <p>
                     <strong>Population:</strong>{" "}
                     <span>{formatNumber(300000)}</span>{" "}
-                  </h6>
-                  <h6>
+                  </p>
+                  <p>
                     <strong>Region:</strong> <span>{country?.region}</span>{" "}
-                  </h6>
-                  <h6>
+                  </p>
+                  <p>
                     <strong>Sub Region:</strong>{" "}
                     <span>{country?.subregion}</span>{" "}
-                  </h6>
-                  <h6>
+                  </p>
+                  <p>
                     <strong>Capital:</strong> <span>{country?.capital}</span>{" "}
-                  </h6>
+                  </p>
                 </div>
                 <div>
-                  <h6>
+                  <p>
                     <strong>Top Level Domain:</strong>{" "}
                     <span>{country?.topLevelDomain[0]}</span>{" "}
-                  </h6>
-                  <h6>
+                  </p>
+                  <p>
                     <strong>Currencies:</strong>{" "}
                     <span>{country?.currencies[0].name}</span>{" "}
-                  </h6>
-                  <h6>
+                  </p>
+                  <p>
                     <strong>Languages: </strong>
                     {country?.languages.map((lang, i) => (
                       <span key={lang.name}>
                         {lang.name} {i + 1 < country?.languages.length && " , "}
                       </span>
                     ))}
-                  </h6>
+                  </p>
                 </div>
               </div>
               <div className="bottom">

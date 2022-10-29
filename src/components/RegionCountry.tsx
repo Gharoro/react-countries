@@ -13,7 +13,7 @@ export default function RegionCountry({ data }: { data: IFilterCountry }) {
         themeContext.isDark ? "country-card country-card-dark" : "country-card"
       }
     >
-      <Link to={`/country/${data.name.common}`}>
+      <Link to={`/country/${data.cioc}`}>
         <img src={data.flags.svg || data.flags.png} alt="country flag" />
         <div
           className={
@@ -23,17 +23,17 @@ export default function RegionCountry({ data }: { data: IFilterCountry }) {
           }
         >
           <h2>{data.name.common}</h2>
-          <h6>
+          <p>
             <strong>Population:</strong>
             <span> {formatNumber(data.population)}</span>
-          </h6>
-          <h6>
+          </p>
+          <p>
             <strong>Region:</strong> <span>{data.region}</span>
-          </h6>
-          <h6>
+          </p>
+          <p>
             <strong>Capital:</strong>
             <span> {data.capital && data.capital[0]}</span>
-          </h6>
+          </p>
         </div>
       </Link>
     </div>

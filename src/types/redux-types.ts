@@ -12,6 +12,7 @@ interface ILanguage {
 
 export interface ICountry {
   name: string;
+  alpha3Code: string;
   capital: string;
   subregion: string;
   region: string;
@@ -53,6 +54,7 @@ export interface IFilterCountry {
   capital: Array<string>;
   altSpellings: Array<string>;
   region: string;
+  cioc: string;
   subregion: string;
   languages: {
     bar: string;

@@ -96,7 +96,7 @@ input:focus {
   border-radius: 4px;
   color: #9c9c9c;
 }
-.select-region-heading h6,
+.select-region-heading h1,
 i {
   font-size: 16px;
 }
@@ -134,14 +134,14 @@ i {
 .country-details h2 {
   margin-bottom: 20px;
 }
-.country-details h6 {
+.country-details p {
   font-size: 16px;
   margin-bottom: 10px;
 }
-.country-details h6 strong {
+.country-details p strong {
   font-weight: bolder;
 }
-.country-details h6 span {
+.country-details p span {
   font-weight: 400;
   font-size: 14px;
 }
@@ -173,7 +173,7 @@ i {
 .main-details .details-right {
   width: 50%;
 }
-.details-right h1 {
+.details-right h2 {
   font-size: 38px;
   font-weight: bolder;
   margin-bottom: 30px;
@@ -183,15 +183,15 @@ i {
   justify-content: space-between;
   align-items: flex-start;
 }
-.sub-details h6 {
+.sub-details p {
   font-size: 14px;
   margin-bottom: 20px;
 }
-.sub-details h6 strong {
+.sub-details p strong {
   font-weight: bolder;
   font-size: 16px;
 }
-.sub-details h6 span {
+.sub-details p span {
   font-weight: lighter;
   font-size: 16px;
   color: #9c9b9b;
